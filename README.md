@@ -21,6 +21,6 @@ python download_coco.py --year 2017 --target_dir ./datasets
 ## Perform data augmentation on COCO
 
 ```
-python transform_coco.py --year 2017 --traget_dir  ./datasets --split train 
-python transform_coco.py --year 2017 --traget_dir  ./datasets --split test 
+python transform_coco.py --year 2017 --target_dir ./datasets --split train 
+python transform_coco.py --year 2017 --target_dir ./datasets --split val 
 ```
