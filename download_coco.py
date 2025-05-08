@@ -31,6 +31,10 @@ def download_and_extract(url, save_dir):
     print(f"Extracting {filename}...")
     with ZipFile(filename, 'r') as zip_ref:
         zip_ref.extractall(save_dir)
+        
+    # Delete the zip file after extraction
+    print(f"Deleting {filename}...")
+    os.remove(filename)
 
 def main():
     parser = argparse.ArgumentParser(description="Download and extract COCO dataset.")
@@ -56,7 +60,7 @@ def main():
     coco_urls = {
         "train_images": "http://images.cocodataset.org/zips/train" + args.year + ".zip",
         "val_images": "http://images.cocodataset.org/zips/val" + args.year + ".zip",
-        "annotations": "http://images.cocodataset.org/annotations/annotations_trainval" + args.year + "zip",
+        "annotations": "http://images.cocodataset.org/annotations/annotations_trainval" + args.year + ".zip",
     }
 
     for key, url in coco_urls.items():
