@@ -2,4 +2,4 @@
 
 ## Overview
 
-This repository provides a **lightweight human detection system** designed to work with **cameras mounted on robots**. 
+This repository provides a **lightweight human detection tool** optimized for performing on **cameras mounted on robots**. 
