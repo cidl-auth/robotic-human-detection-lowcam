@@ -12,13 +12,13 @@ source ./myenv/bin/activate
 pip install -r ./requirements.txt
 ```
 
-# Download COCO
+## Download COCO
 
 ```
 python download_coco.py --year 2017 --target_dir ./datasets
 ```
 
-# Perform data augmentation on COCO
+## Perform data augmentation on COCO
 
 ```
 python transform_coco.py --year 2017 --traget_dir  ./datasets --split train 
