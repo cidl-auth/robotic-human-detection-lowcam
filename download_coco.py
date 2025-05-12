@@ -31,7 +31,7 @@ def download_and_extract(url, save_dir):
     print(f"Extracting {filename}...")
     with ZipFile(filename, 'r') as zip_ref:
         zip_ref.extractall(save_dir)
-        
+
     # Delete the zip file after extraction
     print(f"Deleting {filename}...")
     os.remove(filename)
@@ -54,7 +54,7 @@ def main():
     )
     args = parser.parse_args()
 
-    os.makedirs(args.target_dir, exist_ok=True)
+    os.makedirs(args.target_dir + '/images', exist_ok=True)
 
     # URLs for COCO 2017 dataset
     coco_urls = {
@@ -62,9 +62,9 @@ def main():
         "val_images": "http://images.cocodataset.org/zips/val" + args.year + ".zip",
         "annotations": "http://images.cocodataset.org/annotations/annotations_trainval" + args.year + ".zip",
     }
-
-    for key, url in coco_urls.items():
-        download_and_extract(url, args.target_dir)
+    data_dirs = ['/images', '/images', '']
+    for i, (key, url) in enumerate(coco_urls.items()):
+        download_and_extract(url, args.target_dir + data_dirs[i])
 
 
 if __name__ == "__main__":
