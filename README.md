@@ -21,6 +21,15 @@ python download_coco.py --year 2017 --target_dir ./datasets
 ## Perform data augmentation on COCO
 
 ```
-python transform_coco.py --year 2017 --target_dir ./datasets --split train 
-python transform_coco.py --year 2017 --target_dir ./datasets --split val 
+python augment_coco.py --year 2017 --target_dir ./datasets
+```
+## Transform JSON to YOLO data format
+
+```
+python json2yolo.py --year 2017 --target_dir ./datasets
+```
+## Train YOLO (e.g. YOLO11n)
+
+```
+python train_yolo.py --model YOLO11n --yaml_fln  --output_dir
 ```
