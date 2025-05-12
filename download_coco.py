@@ -4,10 +4,6 @@ from zipfile import ZipFile
 from tqdm import tqdm
 import argparse
 
-
-
-
-
 def download_and_extract(url, save_dir):
     filename = os.path.join(save_dir, url.split("/")[-1])
     if not os.path.exists(filename):
