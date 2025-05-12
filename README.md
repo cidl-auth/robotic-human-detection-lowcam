@@ -15,21 +15,21 @@ pip install -r ./requirements.txt
 ## Download COCO
 
 ```
-python download_coco.py --year 2017 --target_dir ./datasets
+python download_coco.py --year 2017 --target_dir ./datasets/coco
 ```
 
 ## Perform data augmentation on COCO
 
 ```
-python augment_coco.py --year 2017 --target_dir ./datasets
+python augment_coco.py --year 2017 --target_dir ./datasets/coco
 ```
 ## Transform JSON to YOLO data format
 
 ```
-python json2yolo.py --year 2017 --target_dir ./datasets
+python json2yolo.py --year 2017 --target_dir ./datasets/coco
 ```
 ## Train YOLO (e.g. YOLO11n)
 
 ```
-python train_yolo.py --model YOLO11n --yaml_fln  --output_dir
+python train_yolo.py --model YOLO11n --yaml_fln ./datasets/coco/coco2017_augm.yaml --output_dir ./out/yolo11n
 ```
