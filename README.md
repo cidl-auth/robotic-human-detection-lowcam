@@ -31,5 +31,12 @@ python json2yolo.py --year 2017 --target_dir ./datasets/coco
 ## Train YOLO (e.g. YOLO11n)
 
 ```
-python train_yolo.py --model YOLO11n --yaml_fln ./datasets/coco/coco2017_augm.yaml --output_dir ./out/yolo11n
+python train_yolo.py --model YOLO11n --yaml_fln ./datasets/coco/coco2017_augm.yaml \
+--output_dir ./out/yolo11n
 ```
+## Run inference on a signle image
+
+```
+python inference_yolo.py --weights <path_to_yolo11_weights> --source <path_to_img>
+```
+
